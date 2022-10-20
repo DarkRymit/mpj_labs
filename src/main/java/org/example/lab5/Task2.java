@@ -46,7 +46,7 @@ public class Task2 {
         Thread.sleep(100*(my_rank+1));
         System.out.printf("Process rank %d has coordinates %d %d\n", my_rank, coordinates[0], coordinates[1]);
         for (int i = 0; i < 4; i++) {
-            if (neighbours_ranks[i] <= 0) {
+            if (neighbours_ranks[i] < 0) {
                 System.out.printf("[MPI process %d] I have no %s neighbour.\n", my_rank, neighbours_names[i]);
             } else {
                 System.out.printf("[MPI process %d] I have a %s neighbour: process %d.\n", my_rank, neighbours_names[i],
